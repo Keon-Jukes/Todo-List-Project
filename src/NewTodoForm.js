@@ -11,17 +11,19 @@ class NewTodoForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleChange(evt){
+        this.setState({
+            [evt.target.name]: evt.target.value
+        });
+    }
+
     handleSubmit(evt){
         evt.preventDefault();
         this.props.addNewTask({...this.state, id: uuid()});
         this.setState({newTask: '', id: uuid(),})
     }
 
-    handleChange(evt){
-        this.setState({
-            [evt.target.name]: evt.target.value
-        });
-    }
+   
     render(){
         return(<div>
             <form onSubmit={this.handleSubmit}>
