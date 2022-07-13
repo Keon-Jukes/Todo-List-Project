@@ -18,11 +18,14 @@ class TodoList extends Component {
     }
 
     render(){
+        const todos = this.state.todos.map(listTask => <li key={listTask.id}><Todo todoTask={listTask.newTask} /></li>);
+       
         return(<div>
             <h1>Todo List!</h1>
             <NewTodoForm  addNewTask={this.addNewTask}/>
-            {this.state.todos.length > 0 ? (<ul>{this.state.todos.map(listTask => <li key={listTask.id}><Todo todoTask={listTask.newTask} /></li>)} </ul>)
-             : (<div>No task yet..</div>)}
+            <ul>
+            {todos}
+            </ul>
         </div>)
     }
 }
