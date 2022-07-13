@@ -1,6 +1,6 @@
 # Todo List Project
 
-## The todo list project lets users add, edit, remove, and read on their personal todo list for full CRUD functionality. This project is created to keep my React skills fresh and prepare for my role with DOlby.io this upcoming fall. 
+## The todo list project lets users add, edit, remove, and read on their personal todo list for full CRUD functionality. This project is created to keep my React skills fresh and prepare for my role with Dolby.io this upcoming fall. 
 
 ### `npm start`
 
