@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import NewTodoForm from './NewTodoForm';
+import Todo from './Todo';
 
 class TodoList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            todos: []
+            todos: [],
         };
-        this.addTask = this.addTask.bind(this);
+        this.addNewTask = this.addNewTask.bind(this);
     }
 
-    addTask(newTask){
+    addNewTask(newTask){
         this.setState(state => ({
             todos: [...state.todos, newTask]
         }));
@@ -18,9 +19,9 @@ class TodoList extends Component {
 
     render(){
         return(<div>
-            <NewTodoForm  addTask={this.addTask}/>
-            {this.state.todos.length > 0 ? (<div>{this.state.todos.map(listTask => <div key={listTask.id}><Todo todoTask={listTask.newTask} /></div>)} </div>)
-             : (<div>No items available..</div>)}
+            <NewTodoForm  addNewTask={this.addNewTask}/>
+            {this.state.todos.length > 0 ? (<ul>{this.state.todos.map(listTask => <li key={listTask.id}><Todo todoTask={listTask.newTask} /></li>)} </ul>)
+             : (<div>No task yet..</div>)}
         </div>)
     }
 }
